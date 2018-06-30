@@ -39,8 +39,7 @@ class ViewController: UIViewController {
             .debounce(0.5, scheduler: MainScheduler.instance) // Wait 0.5 for changes.
             .distinctUntilChanged() // If they didn't occur, check if the new value is the same as old.
             .flatMapLatest{ query -> Observable<[City]> in//
-               if query.isEmpty { return .just([]) }
-               return .just(self.cities.filter { $0.name.hasPrefix(query) }) // Try to find query in cities
+                return .just(self.cities.filter { $0.name.contains(query)})// Try to find query in cities
             }
             .observeOn(MainScheduler.instance)
         
