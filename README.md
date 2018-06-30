@@ -1,4 +1,4 @@
-# rxSwiftSearchExample
+# RxSwiftSearchExample
 ### An example of RxSwift search and UITableView.
 
 # License
